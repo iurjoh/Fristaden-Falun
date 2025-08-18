@@ -27,12 +27,12 @@ const opportunities: VolunteerOpportunity[] = [
     },
     {
         icon: CoffeeIcon,
-        title: 'Lunch and coffee break',
+        title: 'Lunch & Fika Team',
         description: 'Be part of the team that prepares and serves coffee and snacks after our services, fostering fellowship.'
     },
     {
         icon: SparklesIcon,
-        title: 'Cleaning',
+        title: 'Church Cleaning',
         description: 'Help keep our church building clean and welcoming for services and events.'
     },
     {

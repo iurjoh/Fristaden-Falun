@@ -1,33 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Sermon } from '../types';
 import Chatbot from './Chatbot';
 
-const sermons: Sermon[] = [
-  {
-    id: 1,
-    title: 'The Power of Forgiveness',
-    speaker: 'Pastor John Doe',
-    date: 'August 11, 2024',
-    imageUrl: 'https://picsum.photos/500/300?random=10',
-    videoUrl: '#'
-  },
-  {
-    id: 2,
-    title: 'Living with Purpose',
-    speaker: 'Pastor Jane Smith',
-    date: 'August 4, 2024',
-    imageUrl: 'https://picsum.photos/500/300?random=11',
-    videoUrl: '#'
-  },
-  {
-    id: 3,
-    title: 'Faith Over Fear',
-    speaker: 'Guest Speaker Mike Chan',
-    date: 'July 28, 2024',
-    imageUrl: 'https://picsum.photos/500/300?random=12',
-    videoUrl: '#'
-  }
-];
+// Skeleton Component for the Sermon Card
+const SermonCardSkeleton: React.FC = () => (
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="w-full h-48 bg-gray-200 animate-pulse"></div>
+        <div className="p-6">
+            <div className="h-6 bg-gray-200 rounded w-3/4 mb-4 animate-pulse"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/2 mb-2 animate-pulse"></div>
+            <div className="h-3 bg-gray-200 rounded w-1/3 animate-pulse"></div>
+        </div>
+    </div>
+);
+
 
 const SermonCard: React.FC<{ sermon: Sermon }> = ({ sermon }) => (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden group">
@@ -48,6 +34,47 @@ const SermonCard: React.FC<{ sermon: Sermon }> = ({ sermon }) => (
 );
 
 const Sermons: React.FC = () => {
+    const [sermons, setSermons] = useState<Sermon[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Simulate fetching data from an API
+        const mockSermons: Sermon[] = [
+          {
+            id: 1,
+            title: 'The Power of Forgiveness',
+            speaker: 'Pastor John Doe',
+            date: 'August 11, 2024',
+            imageUrl: 'https://picsum.photos/500/300?random=10',
+            videoUrl: '#'
+          },
+          {
+            id: 2,
+            title: 'Living with Purpose',
+            speaker: 'Pastor Jane Smith',
+            date: 'August 4, 2024',
+            imageUrl: 'https://picsum.photos/500/300?random=11',
+            videoUrl: '#'
+          },
+          {
+            id: 3,
+            title: 'Faith Over Fear',
+            speaker: 'Guest Speaker Mike Chan',
+            date: 'July 28, 2024',
+            imageUrl: 'https://picsum.photos/500/300?random=12',
+            videoUrl: '#'
+          }
+        ];
+
+        const timer = setTimeout(() => {
+            setSermons(mockSermons);
+            setIsLoading(false);
+        }, 1500); // Simulate a 1.5 second loading time
+
+        return () => clearTimeout(timer); // Cleanup on component unmount
+    }, []);
+
+
   return (
     <section className="py-20 bg-church-light-gray">
       <div className="container mx-auto px-6">
@@ -56,9 +83,17 @@ const Sermons: React.FC = () => {
             <p className="text-lg text-church-gray mb-12 max-w-2xl mx-auto">Catch up on recent messages and be encouraged throughout your week.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {sermons.map(sermon => (
-                <SermonCard key={sermon.id} sermon={sermon} />
-            ))}
+            {isLoading ? (
+                <>
+                    <SermonCardSkeleton />
+                    <SermonCardSkeleton />
+                    <SermonCardSkeleton />
+                </>
+            ) : (
+                sermons.map(sermon => (
+                    <SermonCard key={sermon.id} sermon={sermon} />
+                ))
+            )}
         </div>
         <Chatbot />
       </div>

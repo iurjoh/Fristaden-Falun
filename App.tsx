@@ -1,5 +1,7 @@
 
 
+
+
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -11,8 +13,6 @@ import Volunteer from './components/Volunteer';
 import NewHere from './components/NewHere';
 import Beliefs from './components/Beliefs';
 import Footer from './components/Footer';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
 import ServicePage from './components/events/ServicePage';
 import BibleStudyPage from './components/events/BibleStudyPage';
 import WorshipPrayerPage from './components/events/WorshipPrayerPage';
@@ -23,6 +23,8 @@ import MissionsPage from './components/MissionsPage';
 import IndiaMissionPage from './components/missions/IndiaMissionPage';
 import OtherSheepsMissionPage from './components/missions/OtherSheepsMissionPage';
 import EritreiaMissionPage from './components/missions/EritreiaMissionPage';
+import CommunityHub from './components/CommunityHub';
+import CommunityPage from './components/CommunityPage';
 
 const App: React.FC = () => {
   const getPageFromHash = (hash: string) => {
@@ -30,11 +32,10 @@ const App: React.FC = () => {
     if (hash.startsWith('#mission/')) return 'mission-detail';
     if (hash === '#plan-visit') return 'plan-visit';
     if (hash === '#beliefs') return 'beliefs';
-    if (hash === '#login') return 'login';
-    if (hash === '#signup') return 'signup';
     if (hash === '#give-page') return 'give-page';
     if (hash === '#volunteer-page') return 'volunteer-page';
     if (hash === '#missions-page') return 'missions-page';
+    if (hash === '#community-page') return 'community-page';
     return 'home';
   };
   
@@ -103,6 +104,9 @@ const App: React.FC = () => {
       <div id="missions">
           <Missions />
       </div>
+      <div id="community">
+          <CommunityHub />
+      </div>
     </>
   );
 
@@ -112,16 +116,14 @@ const App: React.FC = () => {
         return <NewHere />;
       case 'beliefs':
         return <Beliefs />;
-      case 'login':
-        return <Login />;
-      case 'signup':
-        return <SignUp />;
       case 'give-page':
         return <GivePage />;
       case 'volunteer-page':
         return <VolunteerPage />;
       case 'missions-page':
         return <MissionsPage />;
+      case 'community-page':
+        return <CommunityPage />;
       case 'mission-detail':
         switch (pageSlug) {
             case 'india': return <IndiaMissionPage />;
