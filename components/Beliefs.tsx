@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { BookOpenIcon, HeartIcon, CheckCircleIcon, GlobeIcon, SaltAndLightIcon, OpenDoorsIcon } from './icons';
+import { BookOpenIcon, HeartIcon, CheckCircleIcon, GlobeIcon, SaltAndLightIcon, OpenDoorsIcon, UsersIcon } from './icons';
 
 const Beliefs: React.FC = () => {
     const handleBackToHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -10,22 +10,36 @@ const Beliefs: React.FC = () => {
     };
 
     const beliefs = [
-        "That God created heaven and earth, and that he created man in his image. We believe in God the Father, God the Son and God the Holy Spirit.",
-        "That Jesus Christ is the Son of God and the Savior of the world, who through his death on the cross and resurrection has reconciled us with God. We believe that Jesus is the only way to God, and that it is only in faith in Him that a person can receive forgiveness of sins and be saved.",
-        "That the Holy Spirit is present on earth as our helper. We believe in the gifts of the Holy Spirit. We believe that there is a supernatural charismatic life for all who believe. We believe in wonders and miracles as an answer to prayer, which means that people can be healed and delivered today.",
-        "That the Bible is the word of God, true and reliable. The Bible is our highest authority.",
-        "That life is eternal and that God wants all people to be saved.",
-        "That the church is the body of Christ on earth.",
-        "That Jesus will return."
+        "In one God, Creator of all, who exists eternally as Father, Son, and Holy Spirit.",
+        "That the Bible is the true, reliable, and ultimate authority for our faith and life.",
+        "That all people are sinners and need forgiveness and salvation.",
+        "That Jesus Christ, God's Son, is the only Savior. Through His death and resurrection, He alone reconciles us to God.",
+        "In the present power of the Holy Spirit, who gives gifts, empowers for supernatural life, and performs miracles, healing, and deliverance today.",
+        "In water baptism as a declaration of faith and communion as the sacred meal of the new covenant.",
+        "That the Church is the global body of Christ, called to spread the Gospel and engage in social work.",
+        "That life is sacred from conception and that God's plans for Israel remain valid.",
+        "In biblical principles, including tithing and marriage as a covenant between a man and a woman.",
+        "In the return of Jesus Christ, the reality of eternal life, and God's desire for all to be saved."
     ];
 
     const values = [
         "We believe that God is the main character and center of everything we are and do.",
-        "We want to be a family where God's love prevails and permeates everything we are.",
-        "We want to be a cross-generational church where exchange between age groups creates strength and added value.",
-        "We want to be a place of mercy and a place for mercy, a mercy center.",
+        "We want to be a united family where God's love prevails and permeates everything we are.",
+        "We want to be a cross-generational and multiethnic church where exchange between age groups creates strength and added value.",
+        "We want to be a center of mercy, both receiving and extending compassion.",
         "We want to see God's love at work through faith in and through us, so that we can be salt and light in our city, our country and our world."
     ];
+    
+    const memberCommitments = [
+        "Expressing a desire to belong to Jesus Christ and sharing responsibility in our church family.",
+        "Living an active Christian life, with the congregation as the primary place for spiritual growth.",
+        "Caring for people within our church and in the surrounding community.",
+        "Actively participating in worship services, small groups, and prayer for the congregation and its leadership.",
+        "Giving generously of our time and finances, according to our ability, to support the church's function and mission.",
+        "Contributing to the practical maintenance of our church, such as cleaning and gardening.",
+        "Having an open heart for mission and care, and seeking to influence society with the atmosphere of God's Kingdom."
+    ];
+
 
     const ListItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
         <li className="flex items-start">
@@ -44,7 +58,7 @@ const Beliefs: React.FC = () => {
 
                 <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
                     <p className="text-lg text-center text-church-gray mb-10 italic">
-                        The church is not a building but first and foremost a community of people. We are a multicultural church with people of all ages. Our focus is to be a refuge for all people who need it. You are warmly welcome to our church!
+                        We are A Sanctuary (Fristaden): a community, not just a building. We are a multicultural church for all ages and backgrounds, focused on being a refuge for everyone in need. Our mission is to be a place where people can meet and grow in a relationship with Jesus, and to equip our members to be His disciples, positively impacting society wherever they are. You are warmly welcome!
                     </p>
                     
                     <div className="mb-12">
@@ -67,6 +81,16 @@ const Beliefs: React.FC = () => {
                         </ul>
                     </div>
 
+                    <div className="mb-12">
+                        <div className="flex items-center mb-6">
+                            <UsersIcon className="h-8 w-8 text-church-blue mr-3"/>
+                            <h2 className="text-3xl font-bold text-church-blue font-serif">Our Commitment as Members</h2>
+                        </div>
+                        <ul className="space-y-4 text-church-gray text-lg">
+                            {memberCommitments.map((commitment, index) => <ListItem key={index}>{commitment}</ListItem>)}
+                        </ul>
+                    </div>
+
                     <div className="border-t pt-10">
                         <div className="flex items-center justify-center mb-6">
                             <SaltAndLightIcon className="h-8 w-8 text-church-blue mr-3"/>
@@ -81,7 +105,7 @@ const Beliefs: React.FC = () => {
                                 />
                             </div>
                             <p className="text-church-gray text-lg max-w-2xl mx-auto">
-                                We are a part of <strong className="font-semibold">Salt & Light International</strong>. Salt & Light is an international family of churches and leaders, across Africa, Asia, Europe and the Americas.
+                                We are part of <strong className="font-semibold">Salt & Light International</strong>.. S&L is not a denomination but a family of nearly 1500 congregations located all over the world. The congregation has been related to Salt & Light on an international and national level since 2008. In Sweden, leadership days are organized every year and the congregation's leaders have participated in these days. These meetings have been a great support and encouragement for us in the congregation. The congregation Citykyrkan in Västerås, the Centrumkyrkan in Sala and Heby, the Sion congregation in Flen and the Fristaden congregation have a closer collaboration within Salt&Light Norden in what is called N.E.A.T, an abbreviation for North East Apostolic Team. The pastors in NEAT meet every month and this team is led by Pastor Mats Nordén.
                             </p>
                             <div className="mt-6">
                                 <a 

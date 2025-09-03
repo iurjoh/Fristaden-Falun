@@ -1,11 +1,12 @@
 
+
 import React from 'react';
 import { CoffeeIcon, LeafIcon, SparklesIcon, UsersIcon } from './icons';
 
 const scheduleItemsConfig = [
     {
         icon: UsersIcon,
-        title: "RIA Stugan Falun",
+        title: "Hela Människan i Falun",
         nextUp: "Next up: Team A",
     },
     {

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 interface ScheduleTableProps {
@@ -112,7 +113,7 @@ const CommunityPage: React.FC = () => {
                 </div>
                 
                 <ScheduleTable title="Upcoming Services & Events" headers={servicesData.headers} rows={servicesData.rows} />
-                <ScheduleTable title="RIA Stugan Falun" headers={riaStuganData.headers} rows={riaStuganData.rows} />
+                <ScheduleTable title="Hela Människan i Falun" headers={riaStuganData.headers} rows={riaStuganData.rows} />
                 <ScheduleTable title="Lunch & Fika Team" headers={fikaData.headers} rows={fikaData.rows} />
                 <ScheduleTable title="Church Cleaning" headers={cleaningData.headers} rows={cleaningData.rows} />
                 <ScheduleTable title="Gardening" headers={gardeningData.headers} rows={gardeningData.rows} />

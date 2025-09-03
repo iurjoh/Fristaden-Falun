@@ -17,8 +17,8 @@ interface VolunteerOpportunity {
 const opportunities: VolunteerOpportunity[] = [
     {
         icon: UsersIcon,
-        title: 'RIA Stugan Falun',
-        description: 'Help serve our community at the RIA Stugan, offering support and fellowship to those in need.',
+        title: 'Hela Människan i Falun',
+        description: 'Help serve our community at Hela Människan, offering support and fellowship to those in need.',
         links: [
             { url: 'https://www.facebook.com/HelaManniskanFalun', icon: FacebookIcon, label: 'Facebook' },
             { url: 'https://www.instagram.com/riastugan_falun/', icon: InstagramIcon, label: 'Instagram' },

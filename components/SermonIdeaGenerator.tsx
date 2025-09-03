@@ -44,7 +44,7 @@ const SermonIdeaGenerator: React.FC = () => {
   return (
     <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center border border-gray-100">
       <h3 className="text-2xl md:text-3xl font-bold text-church-blue font-serif mb-2">Sermon Idea Generator</h3>
-      <p className="text-church-gray mb-6 max-w-xl mx-auto">A creative tool for pastors and leaders, powered by Gemini AI.</p>
+      <p className="text-church-gray mb-6 max-w-xl mx-auto">A creative tool for pastors and leaders, powered by AI.</p>
       
       <div className="flex flex-col sm:flex-row gap-2 max-w-lg mx-auto">
         <label htmlFor="sermon-topic" className="sr-only">Sermon Topic</label>

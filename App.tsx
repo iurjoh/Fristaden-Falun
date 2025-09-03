@@ -1,7 +1,4 @@
 
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -23,6 +20,7 @@ import MissionsPage from './components/MissionsPage';
 import IndiaMissionPage from './components/missions/IndiaMissionPage';
 import OtherSheepsMissionPage from './components/missions/OtherSheepsMissionPage';
 import EritreiaMissionPage from './components/missions/EritreiaMissionPage';
+import HelaManniskanPage from './components/missions/HelaManniskanPage';
 import CommunityHub from './components/CommunityHub';
 import CommunityPage from './components/CommunityPage';
 
@@ -92,7 +90,7 @@ const App: React.FC = () => {
       <div id="events">
           <Events />
       </div>
-      <div id="sermons">
+      <div id="resources">
           <Sermons />
       </div>
       <div id="give">
@@ -129,6 +127,7 @@ const App: React.FC = () => {
             case 'india': return <IndiaMissionPage />;
             case 'other-sheeps': return <OtherSheepsMissionPage />;
             case 'eritreia': return <EritreiaMissionPage />;
+            case 'hela-manniskan': return <HelaManniskanPage />;
             default: return <MissionsPage />; // Fallback
         }
       case 'event-detail':

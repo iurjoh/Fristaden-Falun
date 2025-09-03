@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { SheepIcon, FamilyIcon, BookOpenIcon } from './icons';
+import { SheepIcon, FamilyIcon, BookOpenIcon, UsersIcon } from './icons';
 
 interface Mission {
     icon: React.ElementType;
@@ -13,6 +13,13 @@ interface Mission {
 
 const missions: Mission[] = [
     {
+        icon: UsersIcon,
+        title: 'Hela Människan',
+        location: 'Falun - Sweden',
+        description: 'Working to strengthen and support people in vulnerable situations, combat exclusion, and provide opportunities for positive change.',
+        link: '#mission/hela-manniskan'
+    },
+    {
         icon: SheepIcon,
         title: 'Other Sheeps',
         location: 'Parnamirim - Brazil',
@@ -21,9 +28,9 @@ const missions: Mission[] = [
     },
     {
         icon: FamilyIcon,
-        title: 'India',
-        location: 'India',
-        description: 'Partnering with the Fristadens Mercy Center to provide medical care, education, and support to vulnerable communities.',
+        title: 'Love and Concern',
+        location: 'Chennai - India',
+        description: 'Partnering with the Love and Concern Center to provide medical care, education, and support to vulnerable communities.',
         link: '#mission/india'
     },
     {
@@ -82,7 +89,7 @@ const MissionsPage: React.FC = () => {
                        We believe in the Great Commission to go and make disciples of all nations. We are proud to support these missions financially and through prayer. Learn more about our partners and how you can get involved.
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {missions.map((op, index) => (
                         <MissionCard key={index} mission={op} />
                     ))}
